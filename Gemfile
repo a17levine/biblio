@@ -9,6 +9,8 @@ gem 'sqlite3'
 gem 'better_errors'
 # gem 'sass-rails', '~> 3.2'
 gem 'bootstrap-sass', '~> 2.3.2.0'
+gem 'devise'
+gem 'carrierwave'
 
 
 # Gems used only for assets and not required
