@@ -1,4 +1,8 @@
-<table>
+<h1>Ahoy books!</h1>
+<br>
+<br>
+
+<table class="table table-striped table-bordered table-hover">
 	<tr>
 		<th>ID</th>
 		<th>Title</th>
@@ -8,10 +12,12 @@
 	</tr>
 
 	<% @books.each do |book| %>
-		<td><%= book.id %></td>
-		<td><%= book.title %></td>
-		<td><%= book.author %></td>
-		<td><%= book.year %></td>
-		<td><%= book.ISBN %></td>
+		<tr>
+			<td><%= book.id %></td>
+			<td><%= book.title %></td>
+			<td><%= book.author %></td>
+			<td><%= book.year %></td>
+			<td><%= book.ISBN %></td>
+		</tr>
 	<% end %>
 </table>
