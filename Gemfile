@@ -11,6 +11,7 @@ gem 'better_errors'
 gem 'bootstrap-sass', '~> 2.3.2.0'
 gem 'devise'
 gem 'carrierwave'
+gem "rmagick", "~> 2.13.2"
 
 group :development do
 	gem 'sqlite3'
