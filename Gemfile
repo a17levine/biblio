@@ -5,12 +5,17 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+
 gem 'better_errors'
 # gem 'sass-rails', '~> 3.2'
 gem 'bootstrap-sass', '~> 2.3.2.0'
 gem 'devise'
 gem 'carrierwave'
+
+group :development do
+	gem 'sqlite3'
+end
+
 
 
 # Gems used only for assets and not required
@@ -23,6 +28,10 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :production do
+	gem 'pg'
 end
 
 gem 'jquery-rails'
