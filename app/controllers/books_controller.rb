@@ -1,4 +1,4 @@
-before_filter :authenticate_user!
+# before_filter :authenticate_user!
 
 class BooksController < ApplicationController
 
@@ -7,7 +7,8 @@ class BooksController < ApplicationController
 	end
 
 	def create
-		@book = Book.create(params[:book])
+		@book = User.find(current_user.id).books.create(params[:book])
+		# @book = Book.create(params[:book])
 		redirect_to book_url(@book)
 	end
 
@@ -16,11 +17,13 @@ class BooksController < ApplicationController
 	end
 
 	def show
-		@book = Book.find(params[:id])
+		@book = User.find(current_user.id).books.find(params[:id])
 	end
 
 	def index
-		@books = Book.all
+		if user_signed_in?
+			@books = User.find(current_user.id).books
+		end
 	end
 
 	def destroy

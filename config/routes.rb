@@ -2,9 +2,8 @@ Biblio::Application.routes.draw do
   
   devise_for :users
 
-  # devise_for :users
-
-  resources :books
+  root :to => 'books#index'
+  resources :books 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
