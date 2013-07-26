@@ -1,4 +1,7 @@
 <p id="notice"><%= notice %></p>
+<p>
+	<img src="<%= @book.cover_art %>"/>
+</p>
 
 <p>
   <b>Title:</b>
@@ -19,3 +22,5 @@
   <b>ISBN:</b>
   <%= @book.ISBN %>
 </p>
+
+<%= link_to 'back to books', books_path %>
