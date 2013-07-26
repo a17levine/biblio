@@ -12,13 +12,13 @@ class Book < ActiveRecord::Base
 private
 
   def goodreads_autofill_from_isbn_number
-  	client = Goodreads.new(:api_key => ENV["GOODREADS_KEY"])
-  	book = client.book_by_isbn(self.ISBN)
-  	self.title = book.title
-  	self.author = book.authors.first[1].name
-  	self.year = book.publication_year.to_i
-  	self.cover_art = book.image_url
+  	if self.ISBN
+	  	client = Goodreads.new(:api_key => ENV["GOODREADS_KEY"])
+	  	book = client.book_by_isbn(self.ISBN)
+	  	self.title = book.title
+	  	self.author = book.authors.first[1].name
+	  	self.year = book.publication_year.to_i
+	  	self.cover_art = book.image_url
+	  end
   end
-
-
 end
